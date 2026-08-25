@@ -22,7 +22,10 @@
     reset: function () {
       localStorage.removeItem(DRAFT_KEY);
       localStorage.removeItem(OVERRIDE_KEY);
-      location.reload();
+      ["hp_done", "hp_sid", "hp_grant_at"].forEach(function (c) {
+        document.cookie = c + "=; Path=/; Max-Age=0; SameSite=Lax";
+      });
+      location.href = "/";
     },
   });
 
@@ -248,7 +251,9 @@
       "what you wrote. It is a mock — a demonstration of an application process built " +
       "entirely out of obstacles. There is no next round and you will not hear back, " +
       "because there is nobody on the other end. Thanks for playing it through.</p>" +
-      "</div></div>";
+      "</div>" +
+      '<div class="nav" style="margin-top:2rem;"><button type="button" class="btn" id="reset-btn">Reset &amp; Replay Demo</button></div>' +
+      "</div>";
   }
 
   // ---------- attach flow (gate 4) ----------
@@ -342,6 +347,8 @@
       $stepper.innerHTML = "";
       $stepper.style.display = "none";
       $panel.innerHTML = renderDone(doneCode);
+      var rBtn = document.getElementById("reset-btn");
+      if (rBtn) rBtn.addEventListener("click", HP.reset);
       return;
     }
 
