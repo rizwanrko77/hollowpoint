@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Application — Hollowpoint RE-8FF31</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="wordmark" href="/">hollow<span>point</span></a>
+    <span class="masthead-meta">req RE-8FF31 · application</span>
+  </div>
+</header>
+
+<main class="app-wrap">
+  <nav class="stepper" id="stepper" aria-label="Application progress"></nav>
+  <form id="application"
+        data-endpoint="/api/applications"
+        data-signature-header="X-App-Signature"
+        data-protocol="/.well-known/hiring.json"
+        autocomplete="on"
+        novalidate>
+    <div id="panel"></div>
+  </form>
+</main>
+
+<footer class="foot">
+  <span class="foot-meta">demonstration posting · nothing here is a real job</span>
+  <span class="foot-meta"><a href="/access.html">another way in</a></span>
+</footer>
+
+<script src="/assets/app.js"></script>
+</body>
+</html>
